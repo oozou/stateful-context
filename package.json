@@ -1,6 +1,6 @@
 {
   "name": "stateful-context",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Stateful contexts to DRY up your promise chains",
   "main": "index.js",
   "scripts": {
