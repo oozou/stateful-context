@@ -5,6 +5,11 @@ A stateful context to DRY up your promise chain.
 
 Often times, especially in specs, there are times that you have to deal with multiple values in a promise chain.
 
+* [Example](#a-gentle-example)
+* [Usage](#usage)
+* [API](#api)
+
+
 A Gentle Example
 ----------------
 
