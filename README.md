@@ -15,7 +15,7 @@ A Gentle Example
 
 Let's say you are building a Twitter-like application and want to test that following works, that is, when A follows B and B updates a status, A should see B's status in the timeline.
 
-One approach is to nest promise chain, resulting in a promise hell instead of a callback hell.
+One approach is to nest these promises, resulting in a promise hell instead of a callback hell.
 
 ```javascript
 Promise.all([createUser('foo'), createUser('bar')])
@@ -34,7 +34,7 @@ Promise.all([createUser('foo'), createUser('bar')])
 })
 ```
 
-Another approach is to send all variables around.
+Another approach is to pass all the variables we need in the future steps through the promise chain. Notice how you have to maintain the correct order of values and parameters in each step.
 
 ```javascript
 Promise.all([createUser('foo'), createUser('bar')])
@@ -55,8 +55,7 @@ Promise.all([createUser('foo'), createUser('bar')])
 })
 ```
 
-
-And yet another approach is to just store them as local variables.
+And yet another approach is to just store these variables as local variables. Notice how you have to create multiple variables and assigning them yourself.
 
 ```javascript
 var user1, user2, status
@@ -101,7 +100,7 @@ set({
 })
 ```
 
-And it's implemented in 7 lines of code.
+And this StatefulContext is [implemented using 8 lines of code](index.js).
 
 
 Usage
