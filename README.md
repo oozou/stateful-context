@@ -23,12 +23,12 @@ Promise.all([createUser('foo'), createUser('bar')])
   return user1.follow(user2)
   .then(function() {
     return user2.updateStatus('My status')
-    .then(function(status) {
-      return user1.getTimeline()
-      .then(function(timeline) {
-        expectTimelineToContainStatus(timeline, status)
-        done()
-      })
+  })
+  .then(function(status) {
+    return user1.getTimeline()
+    .then(function(timeline) {
+      expectTimelineToContainStatus(timeline, status)
+      done()
     })
   })
 })
