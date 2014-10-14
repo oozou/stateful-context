@@ -108,8 +108,7 @@ Usage
 
 ```javascript
 var StatefulContext = require('stateful-context')
-var the = new StatefulContext()
-var set = the.set
+var the = new StatefulContext(), set = the.set
 ```
 
 ### Use it in your mocha tests
@@ -167,8 +166,12 @@ Returns a new StatefulContext object.
 var the = new StatefulContext()
 ```
 
+This object has a `.set` method on it, already bound to the created StatefulContext instance. Therefore, you can store that function in a variable and call it without having to worry about the value of `this`.
+
 
 ### \#set(object)
+
+_Also exposed as `StatefulContext.prototype.set`_
 
 Returns a Promise.
 
@@ -179,10 +182,3 @@ and adds these values to the StatefulContext.
 If any promise is rejected, then the returned promise will also be rejected.
 
 __Warning:__ Don't call `set` with an object with a key called `set`! :)
-
-
-
-
-
-
-
