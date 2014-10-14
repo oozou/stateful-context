@@ -1,0 +1,27 @@
+{
+  "name": "stateful-context",
+  "version": "1.0.0",
+  "description": "Stateful contexts to DRY up your promise chains",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oozou/stateful-context.git"
+  },
+  "keywords": [
+    "promise",
+    "dry"
+  ],
+  "author": "Thai Pangsakulyanont <org.yi.dttvb@gmail.com> (http://dt.in.th/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oozou/stateful-context/issues"
+  },
+  "homepage": "https://github.com/oozou/stateful-context",
+  "dependencies": {
+    "object-assign": "^1.0.0",
+    "when": "^3.5.0"
+  }
+}

@@ -1,7 +1,7 @@
 var keys = require('when/keys')
-var _    = require('underscore')
+var assign = require('object-assign')
 module.exports = function StatefulContext() {
   this.set = function(promises) {
-    return keys.all(promises).tap(_.extend.bind(_, this))
+    return keys.all(promises).tap(assign.bind(null, this))
   }.bind(this)
 }
