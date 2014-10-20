@@ -158,7 +158,15 @@ locals.set({
 API
 ---
 
-### new StatefulContext()
+### StatefulContext.set(context, object)
+
+Returns a promise that will resolve when all promises inside the `object` are resolved.
+Also, the resolved values are added the `context` with corresponding key as a side effect.
+
+If any of the promise in the object is rejected, the returned promise will be rejected.
+
+
+### context = new StatefulContext()
 
 Returns a new StatefulContext object.
 
@@ -169,16 +177,8 @@ var the = new StatefulContext()
 This object has a `.set` method on it, already bound to the created StatefulContext instance. Therefore, you can store that function in a variable and call it without having to worry about the value of `this`.
 
 
-### \#set(object)
+### context.set(object)
 
-_Also exposed as `StatefulContext.prototype.set`_
-
-Returns a Promise.
-
-Takes an object whose keys may be a promise or a value,
-waits for all promises in that object to resolve to a value,
-and adds these values to the StatefulContext.
-
-If any promise is rejected, then the returned promise will also be rejected.
+Equivalent to calling `StatefulContext.set(context, object)`.
 
 __Warning:__ Don't call `set` with an object with a key called `set`! :)
